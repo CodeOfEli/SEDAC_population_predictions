@@ -17,9 +17,15 @@ with open('lecz-urban-rural-population-land-area-estimates-v2-csv/lecz-urban-rur
 # I want a COMBINED (URBAN + RURAL) growth rate for each continent. 
 
 # Put each continent's urban + rural growth into it's OWN list: 
+
+
     for line in inputFile: 
-    	line = line.rstrip().split(",")
+        line = line.rstrip().split(",")
         if line[1] == 'Total National Population': 
+
+# line[0] = Continent's Name
+# line[5] = 2010 Population
+# line[6] = 2100 Projected Population 
 
             if line[0] == 'Africa':
                 africa_growth.append(int(line[6]) - int(line[5]))
