@@ -59,14 +59,21 @@ with open('lecz-urban-rural-population-land-area-estimates-v2-csv/lecz-urban-rur
 # Pull out the largest value and use it to search the World Dictionary: 
     search_key = sorted_world_values.pop()
 
-# Pull out the name of the country that matches the largest value (population growth): 
+# Find and print the name of the country that matches the largest value (population growth): 
     for key, value in world_dictionary.items(): 
     	if search_key == value: 
     		print "The continent with the highest projected growth in the next 90 years is {}".format(key)
 
-# Correctly prints out asia. 
+# Print out my answer to an external file: 
+with open('national_population.csv', 'w') as outputFile: 
+    #outputFile.write('continent\n\n')
+    for key, value in world_dictionary.items(): 
+        if search_key == value: 
+            outputFile.write("The continent with the highest projected growth in the next 90 years is {}".format(key))  
 
-    		
+
+
+	
 
 
 
